@@ -1,3 +1,5 @@
+#YO here's the link to the github page: https://ucsb-cs56-f19.github.io/lab07-nshamszadeh/
+
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.
