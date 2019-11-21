@@ -64,4 +64,11 @@ public class HomePageTest {
                 .andExpect(xpath("/html/body/div/h1").exists())
                 .andExpect(xpath("/html/body/div/h1").string("Home Page"));
     }
+    @Test
+    public void getHomePage_hasCorrectBrand() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/a").exists())
+                .andExpect(xpath("/html/body/div/nav/a").string("lab07"));
+    }
 }
