@@ -31,22 +31,21 @@ import java.lang.String;
 <span class="nc" id="L31">      HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
 
 <span class="nc" id="L33">      String uri = &quot;https://nominatim.openstreetmap.org/search/&quot;;</span>
-      //String searchString = location.replace(&quot; &quot;, &quot;%20&quot;);
+      //String searchString = location.replace(&quot; &quot;, &quot;%20&quot;); // wow haha I didn't need this
+<span class="nc" id="L35">      String url = uri + location + &quot;?format=json&quot;;</span>
+<span class="nc" id="L36">      logger.info(&quot;url=&quot; + url);</span>
 
-<span class="nc" id="L36">      String url = uri + location + &quot;?format=json&quot;;</span>
-<span class="nc" id="L37">      logger.info(&quot;url=&quot; + url);</span>
-
-<span class="nc" id="L39">      String retVal=&quot;&quot;;</span>
+<span class="nc" id="L38">      String retVal=&quot;&quot;;</span>
       try {   
-<span class="nc" id="L41">          ResponseEntity&lt;String&gt; re = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);</span>
-<span class="nc" id="L42">           MediaType contentType = re.getHeaders().getContentType();</span>
-<span class="nc" id="L43">          HttpStatus statusCode = re.getStatusCode();</span>
-<span class="nc" id="L44">          retVal = re.getBody();</span>
-<span class="nc" id="L45">      } catch (HttpClientErrorException e) {</span>
-<span class="nc" id="L46">          retVal = &quot;{\&quot;error\&quot;: \&quot;401: Unauthorized\&quot;}&quot;;</span>
-<span class="nc" id="L47">      }</span>
-<span class="nc" id="L48">      logger.info(&quot;from LocationQueryService.getJSON: &quot; + retVal);</span>
-<span class="nc" id="L49">      return retVal;</span>
+<span class="nc" id="L40">          ResponseEntity&lt;String&gt; re = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);</span>
+<span class="nc" id="L41">           MediaType contentType = re.getHeaders().getContentType();</span>
+<span class="nc" id="L42">          HttpStatus statusCode = re.getStatusCode();</span>
+<span class="nc" id="L43">          retVal = re.getBody();</span>
+<span class="nc" id="L44">      } catch (HttpClientErrorException e) {</span>
+<span class="nc" id="L45">          retVal = &quot;{\&quot;error\&quot;: \&quot;401: Unauthorized\&quot;}&quot;;</span>
+<span class="nc" id="L46">      }</span>
+<span class="nc" id="L47">      logger.info(&quot;from LocationQueryService.getJSON: &quot; + retVal);</span>
+<span class="nc" id="L48">      return retVal;</span>
     }
 
 }
