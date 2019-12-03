@@ -3,3 +3,5 @@ hello.controllers
 hello.entities
 hello.geojson
 hello.repositories
+hello.searches
+hello.services
