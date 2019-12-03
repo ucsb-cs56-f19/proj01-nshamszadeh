@@ -1,7 +1,7 @@
-hello
-hello.controllers
-hello.entities
-hello.geojson
-hello.repositories
-hello.searches
-hello.services
+earthquakes
+earthquakes.controllers
+earthquakes.entities
+earthquakes.geojson
+earthquakes.repositories
+earthquakes.searches
+earthquakes.services
