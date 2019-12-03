@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 import java.util.HashMap;
-// earthquakes.services.EarthquakeQueryService;
+import earthquakes.services.LocationQueryService;
 import earthquakes.searches.LocSearch;
 
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
@@ -31,8 +31,16 @@ import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
     @GetMapping(&quot;/locations/results&quot;)
     public String getLocationsResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             LocSearch locSearch) {
+                
+<span class="nc" id="L35">        LocationQueryService e =</span>
+        new LocationQueryService();
 
-<span class="nc" id="L35">        return &quot;locations/results&quot;;</span>
+<span class="nc" id="L38">        model.addAttribute(&quot;locSearch&quot;, locSearch);</span>
+<span class="nc" id="L39">        String json = e.getJSON(locSearch.getLocation());</span>
+<span class="nc" id="L40">        model.addAttribute(&quot;json&quot;, json);</span>
+        //FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
+        //model.addAttribute(&quot;featureCollection&quot;,featureCollection);
+<span class="nc" id="L43">        return &quot;locations/results&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
