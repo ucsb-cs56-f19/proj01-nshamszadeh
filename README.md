@@ -1,5 +1,5 @@
-# here's the link to the github page: https://ucsb-cs56-f19.github.io/lab07-nshamszadeh/
-# here's the link to the heroku app: https://cs56-f19-lab07-githubid.herokuapp.com/
+# here's the link to the github page: https://ucsb-cs56-f19.github.io/proj01-nshamszadeh/
+# here's the link to the heroku app: https://cs56-f19-proj01-nshamszadeh.herokuapp.com/
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.
