@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EqSearch.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proj01</a> &gt; <a href="index.source.html" class="el_package">earthquakes.searches</a> &gt; <span class="el_source">EqSearch.java</span></div><h1>EqSearch.java</h1><pre class="source lang-java linenums">package earthquakes.searches;
+import java.lang.String;
 
 public class EqSearch { 
   private int distance;
   private int minmag;
+  private double lat;
+  private double lon;
+  private String location;
 
-<span class="fc" id="L7">  public EqSearch(){}</span>
+<span class="fc" id="L11">  public EqSearch(){}</span>
   
   public int getDistance() {
-<span class="fc" id="L10">    return distance;</span>
+<span class="fc" id="L14">    return distance;</span>
   }
 
   public int getMinmag() {
-<span class="fc" id="L14">    return minmag;</span>
+<span class="fc" id="L18">    return minmag;</span>
+  }
+
+  public double getLat() {
+<span class="fc" id="L22">    return lat;</span>
+  }
+
+  public double getLon() {
+<span class="fc" id="L26">    return lon;</span>
+  }
+
+  public String getLocation() {
+<span class="fc" id="L30">    return location;</span>
   }
 
   public void setDistance(int d) {
-<span class="nc" id="L18">    distance = d;</span>
-<span class="nc" id="L19">  }</span>
+<span class="nc" id="L34">    distance = d;</span>
+<span class="nc" id="L35">  }</span>
 
   public void setMinmag(int mm) {
-<span class="nc" id="L22">    minmag = mm;</span>
-<span class="nc" id="L23">  }</span>
+<span class="nc" id="L38">    minmag = mm;</span>
+<span class="nc" id="L39">  }</span>
 
+  public void setLat(double l) {
+<span class="nc" id="L42">    lat = l;</span>
+<span class="nc" id="L43">  }</span>
 
+  public void setLon(double l) {
+<span class="nc" id="L46">    lon = l;</span>
+<span class="nc" id="L47">  }</span>
+  
+  public void setLocation(String l) {
+<span class="nc" id="L50">    location = l;</span>
+<span class="nc" id="L51">  }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
