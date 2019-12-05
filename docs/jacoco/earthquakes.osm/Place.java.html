@@ -15,62 +15,22 @@ import com.fasterxml.jackson.core.type.TypeReference;
   public double lon;
   public String display_name;
   public String type;
-/* this may be bad practice, but it's what we're doing.
-  public long getPlace_id() {
-    return place_id;
-  }
-
-  public double getLat() {
-    return lat;
-  }
-
-  public double getLon() {
-    return lon;
-  }
-
-  public String getDisplay_name() {
-    return display_name;
-  }
-
-  public String getType() {
-    return type;
-  }
-*/
 
   public static List&lt;Place&gt; listFromJson(String json) {
     try {
-<span class="nc" id="L42">      ObjectMapper objectMapper = new ObjectMapper();</span>
-<span class="nc" id="L43">      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span>
-<span class="nc" id="L44">      List&lt;Place&gt; places = objectMapper.readValue(json, new TypeReference&lt;List&lt;Place&gt;&gt;(){});</span>
-<span class="nc" id="L45">      return places;</span>
+<span class="nc" id="L21">      ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="nc" id="L22">      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span>
+<span class="nc" id="L23">      List&lt;Place&gt; places = objectMapper.readValue(json, new TypeReference&lt;List&lt;Place&gt;&gt;(){});</span>
+<span class="nc" id="L24">      return places;</span>
     } 
-<span class="nc" id="L47">    catch (JsonProcessingException jpe) {</span>
-<span class="nc" id="L48">      logger.error(&quot;JsonProcessingException:&quot; + jpe);</span>
-<span class="nc" id="L49">      return null;</span>
+<span class="nc" id="L26">    catch (JsonProcessingException jpe) {</span>
+<span class="nc" id="L27">      logger.error(&quot;JsonProcessingException:&quot; + jpe);</span>
+<span class="nc" id="L28">      return null;</span>
     } 
-<span class="nc" id="L51">    catch (Exception e) {</span>
-<span class="nc" id="L52">      logger.error(&quot;Exception:&quot; + e);</span>
-<span class="nc" id="L53">      return null;</span>
+<span class="nc" id="L30">    catch (Exception e) {</span>
+<span class="nc" id="L31">      logger.error(&quot;Exception:&quot; + e);</span>
+<span class="nc" id="L32">      return null;</span>
     }
   }
-/*
-  public static Place fromJSONList(List&lt;Place&gt; places) {
-    try {
-      ObjectMapper objectMapper = new ObjectMapper();
-      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-      Place place = objectMapper.readValue(places[0], Place.class);
-      return place;
-    }
-    catch (JsonProcessingException jpe) {
-      logger.error(&quot;JsonProcessingException:&quot; + jpe);
-      return null;
-    } 
-    catch (Exception e) {
-      logger.error(&quot;Exception:&quot; + e);
-      return null;
-    }
-  }
-*/
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
