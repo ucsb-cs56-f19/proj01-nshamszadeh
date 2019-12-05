@@ -18,6 +18,7 @@
                   <th>Display Name</th>
                   <th>Type</th>
                   <th>Get Earthquakes</th>
+                  <th>Add to favorites</th>
               </tr>
           </thead>
           <tbody>
@@ -35,7 +36,10 @@
                   <td th:text="${place.type}"></td>
 
                   <td><a th:href="@{/earthquakes/search/(lat=${place.lat},lon=${place.lon},location=${place.display_name})}">Get Earthquakes</a></td>
-              </tr>
+
+                  <td>Add</td>
+
+                </tr>
 
           </tbody>
       </table>
