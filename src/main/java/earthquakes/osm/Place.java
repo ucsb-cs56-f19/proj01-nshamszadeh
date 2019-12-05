@@ -15,27 +15,6 @@ public class Place {
   public double lon;
   public String display_name;
   public String type;
-/* this may be bad practice, but it's what we're doing.
-  public long getPlace_id() {
-    return place_id;
-  }
-
-  public double getLat() {
-    return lat;
-  }
-
-  public double getLon() {
-    return lon;
-  }
-
-  public String getDisplay_name() {
-    return display_name;
-  }
-
-  public String getType() {
-    return type;
-  }
-*/
 
   public static List<Place> listFromJson(String json) {
     try {
@@ -53,23 +32,4 @@ public class Place {
       return null;
     }
   }
-/*
-  public static Place fromJSONList(List<Place> places) {
-    try {
-      ObjectMapper objectMapper = new ObjectMapper();
-      objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-      Place place = objectMapper.readValue(places[0], Place.class);
-      return place;
-    }
-    catch (JsonProcessingException jpe) {
-      logger.error("JsonProcessingException:" + jpe);
-      return null;
-    } 
-    catch (Exception e) {
-      logger.error("Exception:" + e);
-      return null;
-    }
-  }
-*/
 }
